@@ -18,4 +18,4 @@ function BasicCard (front, back) {
 	};
 }; 
 
-module.exports = BasicCard
+module.exports = BasicCard;

@@ -12,7 +12,7 @@ function ClozeCard (text, cloze) {
 			type: "cloze"
 		};
 
-		fs.appendFile("log.txt", JSON stringify(data) + utf8 function(error) {
+		fs.appendFile("log.txt", JSON.stringify(data) + "utf8", function(error) {
 			if (error) {
 				console.log(error);
 			}
@@ -20,5 +20,5 @@ function ClozeCard (text, cloze) {
 	};
 };
 
-module.exports = ClozeCard
+module.exports = ClozeCard;
 
