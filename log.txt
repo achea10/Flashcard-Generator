@@ -1,1 +1,3 @@
 What was this test card made for?, a test
+Is this card a test, Yes
+Is this card a test?,Sure it is
