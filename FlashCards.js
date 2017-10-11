@@ -8,7 +8,7 @@ function choose() {
 inquirer.prompt([
 	
 	{
-	name: "Pick",
+	name: "choices",
 	type: "list",
 	message: "Pick an option.",
 	choices: ["Basic Flashcard", "Cloze Flashcard", "All Flashcards"] 
@@ -43,7 +43,7 @@ inquirer.prompt([
 			console.log("Not valid try again.");
 			return false;
 			}
-		return false;
+		return true;
 		}
 	},
 
@@ -56,13 +56,17 @@ inquirer.prompt([
 			console.log("Not valid try again.");
 			return false;
 			}
-		return false;
+		return true;
 		}
 	},
 
 	]) .then(function(output) {
 	var newBasic = new BasicCard (output.front, output.back);
-	newBasic.create();
+	fs.appendFile("log.txt", output.front + ", " + output.back + "\r\n", function(err, output){
+	if (err) {
+		return console.log(err);
+	}
+});
 	console.log("Front of the card is: " + output.front + "\r\nBack of the card is: " + output.back);
 })
 

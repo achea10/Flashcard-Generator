@@ -1,21 +1,12 @@
 var fs = require("fs");
 
 function BasicCard (front, back) {
-	this.front = front;
-	this.back = back;
-	this.create = function () {
-		var data = {
-			front: this.front,
-			back: this.back,
-			type: "basic",
-		};
-
-		fs.appendFile("data.txt", JSON.stringify(data) + "utf8", function(error) {
-			if (error) {
-				console.log(error)
-			}
-		});
-	};
+	if (this instanceof BasicCard) {
+		this.front = front;
+		this.back = back;
+	} else {
+		return new BasicCard (front, back); 
+	}
 }; 
 
 module.exports = BasicCard;
